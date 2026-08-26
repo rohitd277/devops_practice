@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome to Railway Ticket Booking (Demo)</title>
+<style>
+  :root {
+    --bg1: #ff6b6b;
+    --bg2: #f7b733;
+    --bg3: #4facfe;
+    --bg4: #43e97b;
+    --card-bg: rgba(255, 255, 255, 0.12);
+    --text-light: #ffffff;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(-45deg, var(--bg1), var(--bg2), var(--bg3), var(--bg4));
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .container {
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(6px);
+    padding: 0.4rem 1.2rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+
+  h1 {
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    font-weight: 800;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    margin-bottom: 0.8rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 2.5rem;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: transform 0.25s ease, background 0.25s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    background: rgba(255,255,255,0.2);
+  }
+
+  .card .icon {
+    font-size: 2rem;
+    margin-bottom: 0.6rem;
+    display: block;
+  }
+
+  .card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .card p {
+    font-size: 0.88rem;
+    opacity: 0.85;
+    line-height: 1.4;
+  }
+
+  .info-box {
+    background: rgba(0,0,0,0.2);
+    border-radius: 14px;
+    padding: 1.5rem;
+    text-align: left;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    border: 1px solid rgba(255,255,255,0.15);
+    overflow-x: auto;
+  }
+
+  .info-box .line {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed rgba(255,255,255,0.15);
+    padding: 0.3rem 0;
+  }
+
+  .info-box .line:last-child {
+    border-bottom: none;
+  }
+
+  .info-box .label {
+    opacity: 0.7;
+  }
+
+  .status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #4ade80;
+    margin-right: 6px;
+    box-shadow: 0 0 8px #4ade80;
+    animation: pulse 1.5s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  footer {
+    margin-top: 2.5rem;
+    font-size: 0.85rem;
+    opacity: 0.75;
+  }
+
+  footer a {
+    color: var(--text-light);
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+
+  <div class="container">
+    <span class="badge">🚆 Demo Server Test Page</span>
+    <h1>Welcome to Railway Ticket Booking</h1>
+    <p class="subtitle">This is a demo/test page running on NGINX — not a real booking platform. Built to verify the web server setup.</p>
+
+    <div class="cards">
+      <div class="card">
+        <span class="icon">🚄</span>
+        <h3>Search Trains</h3>
+        <p>Sample UI block — no live train data or booking logic connected.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🎫</span>
+        <h3>Book Tickets</h3>
+        <p>Placeholder feature card for demo/testing purposes only.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📋</span>
+        <h3>Check PNR Status</h3>
+        <p>Static content only — this server has no backend integration.</p>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <div class="line"><span class="label">Status</span><span><span class="status-dot"></span>Online</span></div>
+      <div class="line"><span class="label">Server</span><span>nginx</span></div>
+      <div class="line"><span class="label">Document Root</span><span>/var/www/html/index.html</span></div>
+      <div class="line"><span class="label">Purpose</span><span>Demo / NGINX Server Test</span></div>
+    </div>
+
+    <footer>
+      ⚠️ Demo page only — not affiliated with or representing the real IRCTC/Indian Railways. Replace with your real site content when ready.
+    </footer>
+  </div>
+
+</body>
+</html>
